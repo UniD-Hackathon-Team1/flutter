@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:unid2022/app/modules/letter_write/views/letter_write_view.dart';
+import 'package:unid2022/app/routes/app_pages.dart';
 
 import '../controllers/letter_controller.dart';
 
@@ -24,18 +25,8 @@ class LetterView extends GetView<LetterController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
-          ScaffoldMessenger.of(context).clearSnackBars();
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Hello There!'),
-              duration: Duration(milliseconds: 1500),
-            ),
-          );
+          Get.toNamed(Routes.LETTER_WRITE);
 
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context)=> const LetterWriteView()),
-          );
         },
         backgroundColor: Colors.blueGrey,
         child: const Icon(Icons.create),
