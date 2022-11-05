@@ -2,10 +2,12 @@ import 'package:get/get.dart';
 
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/ocean/bindings/ocean_binding.dart';
-import '../modules/ocean/views/ocean_view.dart';
 import '../modules/letter/bindings/letter_binding.dart';
 import '../modules/letter/views/letter_view.dart';
+import '../modules/letter_take/bindings/letter_take_binding.dart';
+import '../modules/letter_take/views/letter_take_view.dart';
+import '../modules/ocean/bindings/ocean_binding.dart';
+import '../modules/ocean/views/ocean_view.dart';
 
 part 'app_routes.dart';
 
@@ -29,6 +31,11 @@ class AppPages {
       name: _Paths.LETTER,
       page: () => const LetterView(),
       binding: LetterBinding(),
+    ),
+    GetPage(
+      name: _Paths.LETTER_TAKE,
+      page: () => const LetterTakeView(),
+      binding: LetterTakeBinding(),
     ),
   ];
 }

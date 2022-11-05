@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../letter_take/views/letter_take_view.dart';
 import '../controllers/ocean_controller.dart';
 
 class OceanView extends GetView<OceanController> {
@@ -28,6 +29,7 @@ class OceanView extends GetView<OceanController> {
           child: MaterialButton(
             // Size the button
             onPressed: () {
+              // 유리병을 눌렀을 때의 기능을 넣어주세요
               ScaffoldMessenger.of(context).clearSnackBars();
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
@@ -35,6 +37,12 @@ class OceanView extends GetView<OceanController> {
                   duration: Duration(milliseconds: 1500),
                 ),
               );
+              //////////////////////
+              // 편지를 보여줄거임
+             Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context)=> const LetterTakeView()),
+             );
             },
             child: Image.asset(
               "assets/images/bo.png",
