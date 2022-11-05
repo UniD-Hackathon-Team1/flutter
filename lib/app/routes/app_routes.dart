@@ -11,6 +11,7 @@ abstract class Routes {
   static const LETTER_WRITE = _Paths.LETTER_WRITE;
 
   static const LETTER_TAKE = _Paths.LETTER_TAKE;
+  static const BOOK_SHELF = _Paths.BOOK_SHELF;
 }
 
 abstract class _Paths {
@@ -19,5 +20,5 @@ abstract class _Paths {
   static const OCEAN = '/ocean';
   static const LETTER_WRITE = '/letter-write';
   static const LETTER_TAKE = '/letter-take';
-
+  static const BOOK_SHELF = '/book-shelf';
 }

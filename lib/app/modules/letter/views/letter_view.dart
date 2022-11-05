@@ -11,6 +11,16 @@ class LetterView extends GetView<LetterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: const Text('Home'),
+          centerTitle: true,
+          actions: [
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {Get.toNamed(Routes.LETTER);},
+            ),
+          ],
+        ),
       body: Container(
 
           constraints: BoxConstraints.expand(),
@@ -21,16 +31,31 @@ class LetterView extends GetView<LetterController> {
           ),
 
       ),
+        floatingActionButton: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              onPressed: () {Get.toNamed(Routes.LETTER_WRITE);},
+              backgroundColor: Colors.blueGrey,
+              child: Icon(Icons.create),
+            ),
+            SizedBox(height: 8,),
+            FloatingActionButton(
+              onPressed: () {Get.toNamed(Routes.BOOK_SHELF);},
+              child: Icon(Icons.menu_book_outlined),
+            ),
+          ],
+        )
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-          Get.toNamed(Routes.LETTER_WRITE);
-
-        },
-        backgroundColor: Colors.blueGrey,
-        child: const Icon(Icons.create),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     // Add your onPressed code here!
+      //     Get.toNamed(Routes.LETTER_WRITE);
+      //
+      //   },
+      //   backgroundColor: Colors.blueGrey,
+      //   child: const Icon(Icons.create),
+      // ),
     );
   }
 }
