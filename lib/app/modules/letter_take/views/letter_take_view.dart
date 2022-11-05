@@ -10,6 +10,7 @@ class LetterTakeView extends GetView<LetterTakeController> {
   const LetterTakeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    print(controller.letters  == null ? 0 : controller.letters!.letter!.length);
     return Scaffold(
       appBar: AppBar(
         title: const Text('유리병'),
@@ -17,8 +18,24 @@ class LetterTakeView extends GetView<LetterTakeController> {
       ),
       body: Column(
         children:<Widget>[
-          Text(
-          '편지 받아온거 글 보여주기',
+          Container(
+            height: 400,
+            child: GetBuilder<LetterTakeController>(
+              builder: (_) {
+                return new ListView.builder(
+                  itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return new Card(
+                      child: new Text(controller.letters!.letter![index].text!),
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+
+        Text(
+            "아",
           style: TextStyle(fontSize: 20, backgroundColor: Colors.lightGreen),
         ),
           TextField(
