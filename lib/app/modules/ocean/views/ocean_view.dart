@@ -18,13 +18,10 @@ class OceanView extends GetView<OceanController> {
         constraints: BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/ocean.png"),
+              image: AssetImage("assets/images/ocean.jpg"),
               fit: BoxFit.cover),
         ),
-        child: const Text(
-          'Image in fullscreen',
-          style: TextStyle(fontSize: 34, color: Colors.red),
-        ),
+
       )
     /*
       Center(
