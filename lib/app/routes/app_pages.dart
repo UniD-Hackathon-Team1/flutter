@@ -49,6 +49,8 @@ class AppPages {
       name: _Paths.LETTER_TAKE,
       page: () => const LetterTakeView(),
       binding: LetterTakeBinding(),
-    )
+
+  ),
+
   ];
 }
