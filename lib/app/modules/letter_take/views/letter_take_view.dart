@@ -26,7 +26,9 @@ class LetterTakeView extends GetView<LetterTakeController> {
                   itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                   itemBuilder: (BuildContext context, int index) {
                     return new Card(
-                      child: new Text(controller.letters!.letter![index].text!),
+                      child: new Text(controller.letters!.letter![index].text!,
+                        style: TextStyle(fontSize: 20, backgroundColor: Colors.lightGreen),
+                      ),
                     );
                   },
                 );
@@ -34,10 +36,6 @@ class LetterTakeView extends GetView<LetterTakeController> {
             ),
           ),
 
-        Text(
-            "아",
-          style: TextStyle(fontSize: 20, backgroundColor: Colors.lightGreen),
-        ),
           TextField(
             style: TextStyle(fontSize: 20, backgroundColor: Colors.lightBlue),
             controller: controller.content,
