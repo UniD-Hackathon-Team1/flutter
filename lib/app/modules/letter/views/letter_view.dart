@@ -9,16 +9,14 @@ class LetterView extends GetView<LetterController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('LetterView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text(
-          'LetterView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    )q
+      body: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/background_room.jpg"),
+                fit: BoxFit.cover),
+          ),
+        )
+    );
   }
 }
