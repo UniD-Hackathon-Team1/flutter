@@ -16,7 +16,6 @@ class BookShelfController extends GetxController {
   Future<void> onInit() async {
     super.onInit();
     letters = await bookShelfRepository.getMyBottle();
-    print(letters!.letter![0].text );
     update();
   }
 
