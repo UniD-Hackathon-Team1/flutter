@@ -35,10 +35,21 @@ class BookShelfView extends GetView<BookShelfController> {
               return new ListView.builder(
                 itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return new Card(
-                    child: new Text(controller.letters!.letter![index].timeDate!.year.toString() + "년" +
-                        controller.letters!.letter![index].timeDate!.month.toString() + "월" +
-                        controller.letters!.letter![index].timeDate!.day.toString() + "일"),
+                  // return new Card(
+                  return Column(
+                    children: [
+                      MaterialButton(
+                        onPressed: () { Get.toNamed(Routes.VIEWLETTER); },
+                        child: Container(
+                          child: new Card(
+                            // child: new Text(controller.letters!.letter![index].text!),
+                            child: new Text(controller.letters!.letter![index].timeDate!.year.toString() + "년" +
+                                controller.letters!.letter![index].timeDate!.month.toString() + "월" +
+                                controller.letters!.letter![index].timeDate!.day.toString() + "일"),
+                          ),
+                        ),
+                      ),
+                    ],
                   );
                 },
               );

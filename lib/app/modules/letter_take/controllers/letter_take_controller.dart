@@ -14,6 +14,7 @@ class LetterTakeController extends GetxController {
   void onInit() async{
     super.onInit();
     letters = await letterTakeRepository.getBottle(1);
+    print(letters!.bottleId);
     print(letters!.letter![0].text );
     update();
   }

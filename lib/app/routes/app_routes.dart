@@ -13,6 +13,9 @@ abstract class Routes {
   static const LETTER_TAKE = _Paths.LETTER_TAKE;
   static const BOOK_SHELF = _Paths.BOOK_SHELF;
   static const LOGIN = _Paths.LOGIN;
+  static const VIEWLETTER = _Paths.VIEWLETTER;
+  static const VIEWREVIEWLETTER = _Paths.VIEWREVIEWLETTER;
+  static const VIEWRANDOMLETTER = _Paths.VIEWRANDOMLETTER;
 }
 
 abstract class _Paths {
@@ -23,4 +26,7 @@ abstract class _Paths {
   static const LETTER_TAKE = '/letter-take';
   static const BOOK_SHELF = '/book-shelf';
   static const LOGIN = '/login';
+  static const VIEWLETTER = '/viewletter';
+  static const VIEWREVIEWLETTER = '/viewreviewletter';
+  static const VIEWRANDOMLETTER = '/viewrandomletter';
 }

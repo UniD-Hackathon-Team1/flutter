@@ -8,20 +8,22 @@ class BottleProvider extends GetConnect {
   GetStorage box = GetStorage();
   late var bottleBox;
   @override
-  void onInit() {
+  void onInit() async{
     httpClient.defaultDecoder = (map) {
       if (map is Map<String, dynamic>) return Bottle.fromJson(map);
       if (map is List) return map.map((item) => Bottle.fromJson(item)).toList();
     };
     httpClient.baseUrl = 'YOUR-API-URL';
-    bottleBox = box.read(Constants.bottleBox);
+
+
+  }
+
+  Future<Bottle?> getBottle(int id) async {
+    bottleBox = await box.read(Constants.bottleBox);
     if(bottleBox == null){
       bottleBox = {};
       box.write(Constants.bottleBox, {});
     }
-  }
-
-  Future<Bottle?> getBottle(int id) async {
     var bottlejson = bottleBox[id.toString()];
     if(bottlejson == null){
       bottlejson = {
@@ -88,6 +90,11 @@ class BottleProvider extends GetConnect {
   }
 
   Future<Bottle?> getMyBottle() async {
+    bottleBox = await box.read(Constants.bottleBox);
+    if(bottleBox == null){
+      bottleBox = {};
+      box.write(Constants.bottleBox, {});
+    }
     var bottlejson = bottleBox[(-1).toString()];
     if(bottlejson == null){
       bottlejson = {
@@ -156,6 +163,11 @@ class BottleProvider extends GetConnect {
 
 
   Future<void> postBottle(String text) async {
+    bottleBox = await box.read(Constants.bottleBox);
+    if(bottleBox == null){
+      bottleBox = {};
+      box.write(Constants.bottleBox, {});
+    }
     var bottlejson = bottleBox[(-1).toString()];
     if(bottlejson == null){
       bottlejson = {

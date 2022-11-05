@@ -1,8 +1,5 @@
 import 'package:get/get.dart';
 
-import 'package:unid2022/app/modules/login/bindings/login_binding.dart';
-import 'package:unid2022/app/modules/login/views/login_view.dart';
-
 import '../modules/book_shelf/bindings/book_shelf_binding.dart';
 import '../modules/book_shelf/views/book_shelf_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -13,8 +10,16 @@ import '../modules/letter_take/bindings/letter_take_binding.dart';
 import '../modules/letter_take/views/letter_take_view.dart';
 import '../modules/letter_write/bindings/letter_write_binding.dart';
 import '../modules/letter_write/views/letter_write_view.dart';
+import '../modules/login/bindings/login_binding.dart';
+import '../modules/login/views/login_view.dart';
 import '../modules/ocean/bindings/ocean_binding.dart';
 import '../modules/ocean/views/ocean_view.dart';
+import '../modules/viewletter/bindings/viewletter_binding.dart';
+import '../modules/viewletter/views/viewletter_view.dart';
+import '../modules/viewrandomletter/bindings/viewrandomletter_binding.dart';
+import '../modules/viewrandomletter/views/viewrandomletter_view.dart';
+import '../modules/viewreviewletter/bindings/viewreviewletter_binding.dart';
+import '../modules/viewreviewletter/views/viewreviewletter_view.dart';
 
 part 'app_routes.dart';
 
@@ -58,6 +63,21 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIEWLETTER,
+      page: () => const ViewletterView(),
+      binding: ViewletterBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIEWREVIEWLETTER,
+      page: () => const ViewreviewletterView(),
+      binding: ViewreviewletterBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIEWRANDOMLETTER,
+      page: () => const ViewrandomletterView(),
+      binding: ViewrandomletterBinding(),
     ),
   ];
 }
