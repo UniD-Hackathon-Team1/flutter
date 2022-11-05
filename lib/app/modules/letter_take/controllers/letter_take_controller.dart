@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class OceanController extends GetxController {
-  //TODO: Implement OceanController
+class LetterTakeController extends GetxController {
+  //TODO: Implement LetterTakeController
 
   final count = 0.obs;
+  final content = TextEditingController();//에디트 위함
   @override
   void onInit() {
     super.onInit();
@@ -20,5 +22,4 @@ class OceanController extends GetxController {
   }
 
   void increment() => count.value++;
-
 }
