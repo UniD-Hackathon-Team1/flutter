@@ -32,6 +32,7 @@ class LetterTakeView extends GetView<LetterTakeController> {
                 return new ListView.builder(
                   itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                   itemBuilder: (BuildContext context, int index) {
+                    /*
                     double opcaity = (1.0 - 0.01 * index) < 0 ? 0 : (1.0 - 0.01 * index);
                     return Stack(
                       children: [
@@ -49,15 +50,16 @@ class LetterTakeView extends GetView<LetterTakeController> {
                         ),
 
                       ]
-                    );
-                    /*
+                    );*/
+
                     return new Card(
+                      color: Colors.indigo[index * 100],
                       child: new Text(controller.letters!.letter![index].text!,
                         style: TextStyle(fontSize: 20),
                         //style: TextStyle(fontSize: 20, backgroundColor: Colors.lightGreen),
                       ),
                     );
-                    */
+
                   },
                 );
               },
@@ -65,10 +67,13 @@ class LetterTakeView extends GetView<LetterTakeController> {
           ),
 
           TextField(
-            style: TextStyle(fontSize: 20, backgroundColor: Colors.lightBlue),
+            //style: TextStyle(fontSize: 20, backgroundColor: Colors.lightBlue),
+            style: TextStyle(fontSize: 20),
             controller: controller.content,
             decoration: InputDecoration(
-
+                labelText: "이야기 입력",
+                hintText: '생각나는 이야기를 적어주세요',
+                border: OutlineInputBorder(), //외곽선
                 isDense: true
 
             ),
