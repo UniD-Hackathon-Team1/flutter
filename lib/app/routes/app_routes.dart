@@ -13,6 +13,7 @@ abstract class Routes {
   static const LETTER_TAKE = _Paths.LETTER_TAKE;
   static const BOOK_SHELF = _Paths.BOOK_SHELF;
   static const LOGIN = _Paths.LOGIN;
+  static const VIEWLETTER = _Paths.VIEWLETTER;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const LETTER_TAKE = '/letter-take';
   static const BOOK_SHELF = '/book-shelf';
   static const LOGIN = '/login';
+  static const VIEWLETTER = '/viewletter';
 }
