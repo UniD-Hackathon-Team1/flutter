@@ -17,6 +17,7 @@ class HomeController extends GetxController {
     user = await repository.getUser();
     print(user!.id);
     print(user!.password);
+    print('test');
   }
 
   @override
