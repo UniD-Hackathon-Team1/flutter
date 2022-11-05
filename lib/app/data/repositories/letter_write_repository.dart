@@ -1,15 +1,13 @@
 import 'package:unid2022/app/data/models/bottle_model.dart';
 import 'package:unid2022/app/data/providers/bottle_provider.dart';
 
-class BookShelfRepository {
+class LetterWriteRepository {
   final BottleProvider bottleProvider;
 
-  BookShelfRepository({required this.bottleProvider})
+  LetterWriteRepository({required this.bottleProvider})
       : assert(bottleProvider != null);
 
-  Future<Bottle?> getMyBottle() async =>
-      await bottleProvider.getMyBottle();
+  Future<void> sendBottle(String text) async => await bottleProvider.postBottle(text);
 
 
 }
-
