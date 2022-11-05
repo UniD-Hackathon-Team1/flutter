@@ -6,6 +6,7 @@ import '../models/bottle_model.dart';
 
 class BottleProvider extends GetConnect {
   GetStorage box = GetStorage();
+  late var bottleBox;
   @override
   void onInit() {
     httpClient.defaultDecoder = (map) {
@@ -13,14 +14,14 @@ class BottleProvider extends GetConnect {
       if (map is List) return map.map((item) => Bottle.fromJson(item)).toList();
     };
     httpClient.baseUrl = 'YOUR-API-URL';
-  }
-
-  Future<Bottle?> getBottle(int id) async {
-    var bottleBox = box.read(Constants.bottleBox);
+    bottleBox = box.read(Constants.bottleBox);
     if(bottleBox == null){
       bottleBox = {};
       box.write(Constants.bottleBox, {});
     }
+  }
+
+  Future<Bottle?> getBottle(int id) async {
     var bottlejson = bottleBox[id.toString()];
     if(bottlejson == null){
       bottlejson = {
@@ -87,11 +88,6 @@ class BottleProvider extends GetConnect {
   }
 
   Future<Bottle?> getMyBottle() async {
-    var bottleBox = box.read(Constants.bottleBox);
-    if(bottleBox == null){
-      bottleBox = {};
-      box.write(Constants.bottleBox, {});
-    }
     var bottlejson = bottleBox[(-1).toString()];
     if(bottlejson == null){
       bottlejson = {
@@ -160,12 +156,6 @@ class BottleProvider extends GetConnect {
 
 
   Future<void> postBottle(String text) async {
-    var bottleBox = box.read(Constants.bottleBox);
-    late Bottle mybottle;
-    if(bottleBox == null){
-      bottleBox = {};
-      box.write(Constants.bottleBox, {});
-    }
     var bottlejson = bottleBox[(-1).toString()];
     if(bottlejson == null){
       bottlejson = {
@@ -221,7 +211,7 @@ class BottleProvider extends GetConnect {
         ]
       };
     }
-    mybottle = Bottle.fromJson(bottlejson);
+    Bottle mybottle = Bottle.fromJson(bottlejson);
     mybottle.letter!.add(Letter(text: text,timeDate: TimeDate(year: 2022,month: 11,day: 6)));
     bottleBox[(-1).toString()]  = mybottle.toJson();
     box.write(Constants.bottleBox, bottleBox);
@@ -229,5 +219,4 @@ class BottleProvider extends GetConnect {
     return null;
   }
 
-  Future<Response> deleteBottle(int id) async => await delete('bottle/$id');
 }

@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+import 'package:unid2022/app/modules/login/bindings/login_binding.dart';
+import 'package:unid2022/app/modules/login/views/login_view.dart';
+
 import '../modules/book_shelf/bindings/book_shelf_binding.dart';
 import '../modules/book_shelf/views/book_shelf_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -50,6 +53,11 @@ class AppPages {
       name: _Paths.BOOK_SHELF,
       page: () => const BookShelfView(),
       binding: BookShelfBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LoginView(),
+      binding: LoginBinding(),
     ),
   ];
 }
