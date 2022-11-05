@@ -8,8 +8,12 @@ import '../controllers/ocean_controller.dart';
 
 class OceanView extends GetView<OceanController> {
   const OceanView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    // 유리병 있을 경우에만 true로 바꿔서 이미지 버튼 보여주게 하면 됨
+    bool is_visible = true;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('OceanView'),
@@ -24,7 +28,9 @@ class OceanView extends GetView<OceanController> {
               fit: BoxFit.cover),
         ),
         // add an elevation
-        child: Container(
+        child: Visibility(
+          visible: is_visible,
+          child:Container(
           width: 30,
           height: 40,
           child: MaterialButton(
@@ -54,6 +60,10 @@ class OceanView extends GetView<OceanController> {
             ),
           ),
         ),
+
+        )
+
+
             )
     /*
       Center(
