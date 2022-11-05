@@ -10,6 +10,7 @@ class BookShelfController extends GetxController {
   final count = 0.obs;
   final BookShelfRepository bookShelfRepository;
   Bottle? letters;
+  RxBool isCardExpanded = false.obs;
 
   BookShelfController({required this.bookShelfRepository});
   @override
@@ -31,4 +32,9 @@ class BookShelfController extends GetxController {
   }
 
   void increment() => count.value++;
+
+  void changeExpanded() {
+    isCardExpanded.value = !isCardExpanded.value;
+    update();
+  }
 }

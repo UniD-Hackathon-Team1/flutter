@@ -40,32 +40,63 @@ class OceanView extends GetView<OceanController> {
           child:Container(
           width: 30,
           height: 40,
-          child: MaterialButton(
-            // Size the button
-            onPressed: () {
-              // 유리병을 눌렀을 때의 기능을 넣어주세요
-              ScaffoldMessenger.of(context).clearSnackBars();
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Hello There!'),
-                  duration: Duration(milliseconds: 1500),
-                ),
-              );
-              //////////////////////
-              // 편지를 보여줄거임
-              Get.toNamed(Routes.LETTER_TAKE);
-              /*
-             Navigator.push(
-               context,
-               MaterialPageRoute(builder: (context)=> const LetterTakeView()),
-             );
+          child: Column(
+            children: [
+              MaterialButton(
+                // Size the button
+                onPressed: () {
+                  // 유리병을 눌렀을 때의 기능을 넣어주세요
+                  ScaffoldMessenger.of(context).clearSnackBars();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Hello There!'),
+                      duration: Duration(milliseconds: 1500),
+                    ),
+                  );
+                  //////////////////////
+                  // 편지를 보여줄거임
+                  Get.toNamed(Routes.LETTER_TAKE);
+                  /*
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context)=> const LetterTakeView()),
+                 );
 
-               */
-            },
-            child: Image.asset(
-              "assets/images/bo.png",
-            ),
+                   */
+                },
+                child: Image.asset(
+                  "assets/images/bo.png",
+                ),
+              ),
+              MaterialButton(
+                // Size the button
+                onPressed: () {
+                  // 유리병을 눌렀을 때의 기능을 넣어주세요
+                  ScaffoldMessenger.of(context).clearSnackBars();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Hello There!'),
+                      duration: Duration(milliseconds: 1500),
+                    ),
+                  );
+                  //////////////////////
+                  // 편지를 보여줄거임
+                  Get.toNamed(Routes.LETTER_TAKE);
+                  /*
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context)=> const LetterTakeView()),
+                 );
+
+                   */
+                },
+                child: Image.asset(
+                  "assets/images/bo.png",
+                ),
+              ),
+            ],
           ),
+
         ),
 
         )

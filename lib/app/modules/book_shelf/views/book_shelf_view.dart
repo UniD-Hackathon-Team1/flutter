@@ -33,9 +33,13 @@ class BookShelfView extends GetView<BookShelfController> {
           child: GetBuilder<BookShelfController>(
             builder: (_) {
               return new ListView.builder(
+                scrollDirection: Axis.horizontal,
+                shrinkWrap: true,
                 itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                 itemBuilder: (BuildContext context, int index) {
+                  // return new Card(
                   return new Card(
+                    // child: new Text(controller.letters!.letter![index].text!),
                     child: new Text(controller.letters!.letter![index].timeDate!.year.toString() + "년" +
                         controller.letters!.letter![index].timeDate!.month.toString() + "월" +
                         controller.letters!.letter![index].timeDate!.day.toString() + "일"),
