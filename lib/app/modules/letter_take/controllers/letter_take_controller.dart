@@ -1,13 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:unid2022/app/data/models/bottle_model.dart';
 import 'package:unid2022/app/data/providers/bottle_provider.dart';
+import 'package:unid2022/app/data/repositories/letter_take_repository.dart';
 
 class LetterTakeController extends GetxController {
   final count = 0.obs;
-  final content = TextEditingController();//에디트 위함
+  final LetterTakeRepository letterTakeRepository;
+  final content = TextEditingController();
+
+  LetterTakeController({required this.letterTakeRepository});//에디트 위함
   @override
-  void onInit() {
+  void onInit() async{
     super.onInit();
+    Bottle? letters = await letterTakeRepository.getBottle(1);
+    print(letters!.letter![0].text );
   }
 
   @override
