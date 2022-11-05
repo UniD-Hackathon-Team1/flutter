@@ -22,13 +22,10 @@ flutter:
   assets:
     - assets/images/background_room.jpg
     - assets/images/ocean.jpg
-<<<<<<< HEAD
     - assets/images/letter.jpg
-=======
     - assets/images/bo.png
 #  assets:
 #    -assets/images/background_room.jpg
 #    -assets/images/letter.png
->>>>>>> 4700f5a9f47e0316c4ec20bd1d731558b81750cd
 
 
