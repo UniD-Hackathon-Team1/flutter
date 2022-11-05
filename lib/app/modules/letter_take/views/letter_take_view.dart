@@ -15,6 +15,13 @@ class LetterTakeView extends GetView<LetterTakeController> {
       appBar: AppBar(
         title: const Text('유리병'),
         centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {Get.toNamed(Routes.LETTER);},
+          ),
+        ],
       ),
       body: Column(
         children:<Widget>[

@@ -18,6 +18,13 @@ class OceanView extends GetView<OceanController> {
       appBar: AppBar(
         title: const Text('OceanView'),
         centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {Get.toNamed(Routes.LETTER);},
+          ),
+        ],
       ),
       body:
       Container(

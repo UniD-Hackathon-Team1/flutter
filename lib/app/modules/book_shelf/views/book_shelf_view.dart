@@ -13,6 +13,7 @@ class BookShelfView extends GetView<BookShelfController> {
       appBar: AppBar(
         title: const Text('BookShelfView'),
         centerTitle: true,
+        backgroundColor: Colors.blueGrey,
         actions: [
           IconButton(
             icon: Icon(Icons.home),

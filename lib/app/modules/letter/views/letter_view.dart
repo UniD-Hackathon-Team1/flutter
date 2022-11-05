@@ -13,6 +13,7 @@ class LetterView extends GetView<LetterController> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Home'),
+          backgroundColor: Colors.blueGrey,
           centerTitle: true,
           actions: [
             IconButton(
@@ -35,14 +36,20 @@ class LetterView extends GetView<LetterController> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FloatingActionButton(
-              onPressed: () {Get.toNamed(Routes.LETTER_WRITE);},
-              backgroundColor: Colors.blueGrey,
-              child: Icon(Icons.create),
+              onPressed: () {Get.toNamed(Routes.OCEAN);},
+              backgroundColor: Colors.lightBlueAccent,
+              child: Icon(Icons.sailing),
             ),
             SizedBox(height: 8,),
             FloatingActionButton(
               onPressed: () {Get.toNamed(Routes.BOOK_SHELF);},
               child: Icon(Icons.menu_book_outlined),
+            ),
+            SizedBox(height: 8,),
+            FloatingActionButton(
+              onPressed: () {Get.toNamed(Routes.LETTER_WRITE);},
+              backgroundColor: Colors.blueAccent,
+              child: Icon(Icons.create),
             ),
           ],
         )

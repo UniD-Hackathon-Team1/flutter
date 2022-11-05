@@ -13,6 +13,7 @@ class LetterWriteView extends GetView<LetterWriteController> {
       appBar: AppBar(
         title: const Text('LetterWriteView'),
         centerTitle: true,
+        backgroundColor: Colors.blueGrey,
         actions: [
           IconButton(
             icon: Icon(Icons.home),
