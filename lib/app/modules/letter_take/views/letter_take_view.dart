@@ -58,10 +58,13 @@ class LetterTakeView extends GetView<LetterTakeController> {
           ),
 
           TextField(
-            style: TextStyle(fontSize: 20, backgroundColor: Colors.lightBlue),
+            //style: TextStyle(fontSize: 20, backgroundColor: Colors.lightBlue),
+            style: TextStyle(fontSize: 20),
             controller: controller.content,
             decoration: InputDecoration(
-
+                labelText: "테스트 입력",
+                hintText: '생각나는 이야기를 적어주세요',
+                border: OutlineInputBorder(), //외곽선
                 isDense: true
 
             ),
