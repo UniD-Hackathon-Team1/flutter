@@ -29,6 +29,7 @@ class LetterTakeView extends GetView<LetterTakeController> {
             height: 400,
             child: GetBuilder<LetterTakeController>(
               builder: (_) {
+                print(controller.letters  == null);
                 return new ListView.builder(
                   itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                   itemBuilder: (BuildContext context, int index) {
