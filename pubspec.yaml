@@ -22,6 +22,7 @@ flutter:
   assets:
     - assets/images/background_room.jpg
     - assets/images/ocean.jpg
+    - assets/images/bo.png
 #  assets:
 #    -assets/images/background_room.jpg
 #    -assets/images/letter.png

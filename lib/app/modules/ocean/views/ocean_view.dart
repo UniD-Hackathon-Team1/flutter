@@ -21,8 +21,27 @@ class OceanView extends GetView<OceanController> {
               image: AssetImage("assets/images/ocean.jpg"),
               fit: BoxFit.cover),
         ),
-
-      )
+        // add an elevation
+        child: Container(
+          width: 30,
+          height: 40,
+          child: MaterialButton(
+            // Size the button
+            onPressed: () {
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Hello There!'),
+                  duration: Duration(milliseconds: 1500),
+                ),
+              );
+            },
+            child: Image.asset(
+              "assets/images/bo.png",
+            ),
+          ),
+        ),
+            )
     /*
       Center(
         child: Text(
