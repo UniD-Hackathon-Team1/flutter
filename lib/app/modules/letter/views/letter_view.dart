@@ -19,6 +19,6 @@ class LetterView extends GetView<LetterController> {
           style: TextStyle(fontSize: 20),
         ),
       ),
-    )q
+    );
   }
 }
