@@ -18,7 +18,6 @@ class HomeController extends GetxController {
   @override
   void onInit() async{
     super.onInit();
-    user = await repository.getUser();
     Bottle? bottle = await repository2.getMyBottle();
     print(bottle!.letter![0].text!);
     print('test');

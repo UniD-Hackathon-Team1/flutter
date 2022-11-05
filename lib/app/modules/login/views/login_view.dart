@@ -83,7 +83,7 @@ class LoginView extends GetView<LoginController> {
                           color: Colors.white.withOpacity(0.2),
                         ),
                         child: MaterialButton(
-                          onPressed: (){},
+                          onPressed: controller.login,
                           child: Center(
                             child: Text("LOGIN",
                               style: TextStyle(color: Colors.grey),
