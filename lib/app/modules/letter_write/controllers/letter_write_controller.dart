@@ -1,14 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:unid2022/app/data/repositories/letter_write_repository.dart';
 
 class LetterWriteController extends GetxController {
   //TODO: Implement LetterWriteController
 
   final count = 0.obs;
   final content = TextEditingController();
+  final LetterWriteRepository letterWriteRepository;
 
+
+  LetterWriteController({required this.letterWriteRepository});
   @override
-  void onInit() {
+  Future<void> onInit() async {
     super.onInit();
   }
 
@@ -23,4 +27,8 @@ class LetterWriteController extends GetxController {
   }
 
   void increment() => count.value++;
+
+  Future<void> write() async {
+    await letterWriteRepository.sendBottle(content.value.text);
+    content.clear();}
 }

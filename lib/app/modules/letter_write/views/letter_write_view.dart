@@ -49,8 +49,9 @@ class LetterWriteView extends GetView<LetterWriteController> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
           // Add your onPressed code here!
+          await controller.write();
         },
         backgroundColor: Colors.blueGrey,
         child: const Icon(Icons.save),
