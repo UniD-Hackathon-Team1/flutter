@@ -21,6 +21,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/background_room.jpg
-    - assets/images/letter.png
+    - assets/images/ocean.jpg
+    - assets/images/letter.jpg
 
 

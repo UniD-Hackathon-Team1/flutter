@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-class LetterController extends GetxController {
-  //TODO: Implement LetterController
+class LetterWriteController extends GetxController {
+  //TODO: Implement LetterWriteController
 
   final count = 0.obs;
-
+  final content = TextEditingController();
 
   @override
   void onInit() {

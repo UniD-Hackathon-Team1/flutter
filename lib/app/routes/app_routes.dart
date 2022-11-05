@@ -7,10 +7,12 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const LETTER = _Paths.LETTER;
   static const OCEAN = _Paths.OCEAN;
+  static const LETTER_WRITE = _Paths.LETTER_WRITE;
 }
 
 abstract class _Paths {
   static const HOME = '/home';
   static const LETTER = '/letter';
   static const OCEAN = '/ocean';
+  static const LETTER_WRITE = '/letter-write';
 }
