@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../letter_take/views/letter_take_view.dart';
 import '../controllers/ocean_controller.dart';
 
@@ -39,10 +40,14 @@ class OceanView extends GetView<OceanController> {
               );
               //////////////////////
               // 편지를 보여줄거임
+              Get.toNamed(Routes.LETTER_TAKE);
+              /*
              Navigator.push(
                context,
                MaterialPageRoute(builder: (context)=> const LetterTakeView()),
              );
+
+               */
             },
             child: Image.asset(
               "assets/images/bo.png",
