@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:unid2022/app/data/providers/bottle_provider.dart';
 
 class LetterTakeController extends GetxController {
-  //TODO: Implement LetterTakeController
-
   final count = 0.obs;
   final content = TextEditingController();//에디트 위함
   @override

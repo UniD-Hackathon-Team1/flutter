@@ -1,0 +1,21 @@
+{
+  "bottleId":1234,
+  "letter":[
+  {
+  "text":"편지1",
+  "timeDate":{
+    "year":2021,
+    "month": 7,
+    "day": 21
+  }
+  },
+    {
+      "text":"이 편지는 영국에서 부터 시작되어..",
+      "timeDate":{
+        "year":2021,
+        "month": 7,
+        "day": 21
+      }
+    }
+]
+}
