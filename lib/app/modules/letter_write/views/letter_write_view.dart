@@ -56,6 +56,7 @@ class LetterWriteView extends GetView<LetterWriteController> {
         onPressed: () async {
           // Add your onPressed code here!
           await controller.write();
+          Get.toNamed(Routes.LETTER);
         },
         backgroundColor: Colors.blueGrey,
         child: const Icon(Icons.save),

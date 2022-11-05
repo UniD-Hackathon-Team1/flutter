@@ -16,6 +16,10 @@ import '../modules/ocean/bindings/ocean_binding.dart';
 import '../modules/ocean/views/ocean_view.dart';
 import '../modules/viewletter/bindings/viewletter_binding.dart';
 import '../modules/viewletter/views/viewletter_view.dart';
+import '../modules/viewrandomletter/bindings/viewrandomletter_binding.dart';
+import '../modules/viewrandomletter/views/viewrandomletter_view.dart';
+import '../modules/viewreviewletter/bindings/viewreviewletter_binding.dart';
+import '../modules/viewreviewletter/views/viewreviewletter_view.dart';
 
 part 'app_routes.dart';
 
@@ -64,6 +68,16 @@ class AppPages {
       name: _Paths.VIEWLETTER,
       page: () => const ViewletterView(),
       binding: ViewletterBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIEWREVIEWLETTER,
+      page: () => const ViewreviewletterView(),
+      binding: ViewreviewletterBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIEWRANDOMLETTER,
+      page: () => const ViewrandomletterView(),
+      binding: ViewrandomletterBinding(),
     ),
   ];
 }

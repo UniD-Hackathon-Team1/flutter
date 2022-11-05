@@ -94,7 +94,7 @@ class OceanView extends GetView<OceanController> {
                     );
                     //////////////////////
                     // 리뷰 달린 자신의 편지를 보여줄거임
-                    Get.toNamed(Routes.LETTER_TAKE);
+                    Get.toNamed(Routes.VIEWREVIEWLETTER);
                     /*
                    Navigator.push(
                      context,

@@ -1,8 +1,7 @@
 import 'package:get/get.dart';
 
-class ViewletterController extends GetxController {
-  //TODO: Implement ViewletterController
-
+class ViewrandomletterController extends GetxController {
+  //TODO: Implement ViewrandomletterController
 
   final count = 0.obs;
   @override
