@@ -75,7 +75,79 @@ class BottleProvider extends GetConnect {
           }
         ]
       };
-      box.write(Constants.bottleBox, bottlejson);
+      bottleBox[id.toString()] = bottlejson;
+      box.write(Constants.bottleBox, bottleBox);
+    }
+    Bottle bottle = Bottle.fromJson(bottlejson);
+    // final response = await get('bottle/$id');
+    // if .
+    // var k = box.read(Constants.bottleBox);
+    // print(k);
+    return bottle;
+  }
+
+  Future<Bottle?> getMyBottle() async {
+    var bottleBox = box.read(Constants.bottleBox);
+    if(bottleBox == null){
+      bottleBox = {};
+      box.write(Constants.bottleBox, {});
+    }
+    var bottlejson = bottleBox[(-1).toString()];
+    if(bottlejson == null){
+      bottlejson = {
+        "bottleId":1234,
+        "letter":[
+          {
+            "text":"내겁니다",
+            "timeDate":{
+              "year":2021,
+              "month": 7,
+              "day": 21
+            }
+          },
+          {
+            "text":"이 편지는 영국에서 부터 시작되어..",
+            "timeDate":{
+              "year":2021,
+              "month": 7,
+              "day": 24
+            }
+          },
+          {
+            "text":"이 편지는 영국에서 부터 시작되어..",
+            "timeDate":{
+              "year":2021,
+              "month": 7,
+              "day": 25
+            }
+          },
+          {
+            "text":"이 편지는 영국에서 부터 시작되어..",
+            "timeDate":{
+              "year":2021,
+              "month": 7,
+              "day": 26
+            }
+          },
+          {
+            "text":"이 편지는 영국에서 부터 시작되어..",
+            "timeDate":{
+              "year":2021,
+              "month": 7,
+              "day": 27
+            }
+          },{
+            "text":"이 편지는 영국에서 부터 시작되어..",
+            "timeDate":{
+              "year":2021,
+              "month": 7,
+              "day": 28
+            }
+          }
+        ]
+      };
+      bottleBox[(-1).toString()]  = bottlejson;
+      box.write(Constants.bottleBox, bottleBox);
     }
     Bottle bottle = Bottle.fromJson(bottlejson);
     // final response = await get('bottle/$id');
