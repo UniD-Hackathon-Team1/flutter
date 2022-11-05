@@ -8,13 +8,14 @@ class LetterTakeController extends GetxController {
   final count = 0.obs;
   final LetterTakeRepository letterTakeRepository;
   final content = TextEditingController();
-
+  Bottle? letters;
   LetterTakeController({required this.letterTakeRepository});//에디트 위함
   @override
   void onInit() async{
     super.onInit();
-    Bottle? letters = await letterTakeRepository.getBottle(1);
+    letters = await letterTakeRepository.getBottle(1);
     print(letters!.letter![0].text );
+    update();
   }
 
   @override
