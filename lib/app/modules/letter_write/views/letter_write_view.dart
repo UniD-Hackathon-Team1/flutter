@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/letter_write_controller.dart';
 
 class LetterWriteView extends GetView<LetterWriteController> {
@@ -9,6 +10,16 @@ class LetterWriteView extends GetView<LetterWriteController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('LetterWriteView'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {Get.toNamed(Routes.LETTER);},
+          ),
+        ],
+      ),
       body: Container(
 
         constraints: BoxConstraints.expand(),
@@ -23,8 +34,11 @@ class LetterWriteView extends GetView<LetterWriteController> {
                 TextField(
                   controller: controller.content,
                   decoration: InputDecoration(
-                      isDense: true
+                      isDense: true,
+                      contentPadding: EdgeInsets.all(30.0)
                   ),
+                  keyboardType: TextInputType.multiline,
+                  maxLines: null,
                 ),
               ],
             )
