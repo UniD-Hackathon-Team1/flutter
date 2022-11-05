@@ -28,6 +28,7 @@ class OceanView extends GetView<OceanController> {
       ),
       body:
       Container(
+
         constraints: BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -35,11 +36,12 @@ class OceanView extends GetView<OceanController> {
               fit: BoxFit.cover),
         ),
         // add an elevation
-        child: Visibility(
+        child:
+        Visibility(
           visible: is_visible,
           child:Container(
-          width: 30,
-          height: 40,
+          width: 20,
+          height: 20,
           child: MaterialButton(
             // Size the button
             onPressed: () {
@@ -63,7 +65,7 @@ class OceanView extends GetView<OceanController> {
                */
             },
             child: Image.asset(
-              "assets/images/bo.png",
+              "assets/images/bo.png", height: 100, width: 140,
             ),
           ),
         ),
@@ -72,6 +74,7 @@ class OceanView extends GetView<OceanController> {
 
 
             )
+
     /*
       Center(
         child: Text(
