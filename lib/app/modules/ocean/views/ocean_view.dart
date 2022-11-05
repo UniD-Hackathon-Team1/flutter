@@ -28,6 +28,7 @@ class OceanView extends GetView<OceanController> {
       ),
       body:
       Container(
+
         constraints: BoxConstraints.expand(),
         decoration: const BoxDecoration(
           image: DecorationImage(
@@ -35,9 +36,11 @@ class OceanView extends GetView<OceanController> {
               fit: BoxFit.cover),
         ),
         // add an elevation
-        child: Visibility(
+        child:
+        Visibility(
           visible: is_visible,
           child:Container(
+
           width: 30,
           height: 40,
           child: Column(
@@ -94,15 +97,42 @@ class OceanView extends GetView<OceanController> {
                   "assets/images/bo.png",
                 ),
               ),
-            ],
-          ),
 
+          MaterialButton(
+            // Size the button
+            onPressed: () {
+              // 유리병을 눌렀을 때의 기능을 넣어주세요
+              ScaffoldMessenger.of(context).clearSnackBars();
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Hello There!'),
+                  duration: Duration(milliseconds: 1500),
+                ),
+              );
+              //////////////////////
+              // 편지를 보여줄거임
+              Get.toNamed(Routes.LETTER_TAKE);
+              /*
+             Navigator.push(
+               context,
+               MaterialPageRoute(builder: (context)=> const LetterTakeView()),
+             );
+
+               */
+            },
+            child: Image.asset(
+              "assets/images/bo.png", height: 100, width: 140,
+            ),
+
+          ),
+          ],
         ),
 
         )
 
 
             )
+
     /*
       Center(
         child: Text(
@@ -111,6 +141,7 @@ class OceanView extends GetView<OceanController> {
         ),
       ),
     */
+    ),
     );
   }
 }
