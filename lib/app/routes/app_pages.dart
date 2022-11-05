@@ -17,7 +17,9 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.BOOK_SHELF;
+
+  static const INITIAL = Routes.LETTER;
+
 
   static final routes = [
     GetPage(
