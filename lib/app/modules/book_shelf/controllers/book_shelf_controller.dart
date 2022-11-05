@@ -6,13 +6,15 @@ class BookShelfController extends GetxController {
   //TODO: Implement BookShelfController
 
   final count = 0.obs;
-
-  get letterTakeRepository => null;
+  // final BookShelfRepository bookShelfRepository;
+  // Bottle? letters;
+  // BookShelfRepository({required this.bookShelfRepository});
   @override
   Future<void> onInit() async {
     super.onInit();
-    Bottle? letters = await letterTakeRepository.getBottle(1);
-    print(letters!.letter![0].text );
+    // letters = await bookShelfRepository.getBottle(1);
+    // print(letters!.letter![0].text );
+    // update();
   }
 
   @override

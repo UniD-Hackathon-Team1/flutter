@@ -20,15 +20,20 @@ class BookShelfView extends GetView<BookShelfController> {
           ),
         ],
       ),
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/book_shelf.jpg"),
-              fit: BoxFit.cover),
-        ),
+      body: Column(
+          children:<Widget>[
+          Container(
+            constraints: BoxConstraints.expand(),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/images/book_shelf.jpg"),
+                  fit: BoxFit.cover),
+            ),
 
+          ),
+        ]
       ),
+
     );
   }
 }
