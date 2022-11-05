@@ -24,6 +24,14 @@ class LetterView extends GetView<LetterController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Add your onPressed code here!
+          ScaffoldMessenger.of(context).clearSnackBars();
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Hello There!'),
+              duration: Duration(milliseconds: 1500),
+            ),
+          );
+
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context)=> const LetterWriteView()),
