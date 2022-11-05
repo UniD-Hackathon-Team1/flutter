@@ -13,9 +13,19 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+        child: Column(
+          children: [
+            MaterialButton(onPressed: controller.increment,child: Text('click'),),
+            GetBuilder<HomeController>(
+              builder: (_) {
+                return Text('count : ${_.count}');
+              },
+            ),
+            Text(
+              'HomeView is working',
+              style: TextStyle(fontSize: 20),
+            ),
+          ],
         ),
       ),
     );
