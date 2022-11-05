@@ -27,5 +27,5 @@ class HomeController extends GetxController {
 
   @override
   void onClose() {}
-  void increment() => count.value++;
+  void increment() {count.value++; update();}
 }
