@@ -23,7 +23,7 @@ class BookShelfView extends GetView<BookShelfController> {
       body: Column(
           children:<Widget>[
           Container(
-            constraints: BoxConstraints.expand(),
+            height: 640,
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/book_shelf.jpg"),

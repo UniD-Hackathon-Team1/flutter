@@ -25,24 +25,45 @@ class LetterTakeView extends GetView<LetterTakeController> {
                 return new ListView.builder(
                   itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return new Card(
-                      child: new Text(controller.letters!.letter![index].text!),
+                    double opcaity = (1.0 - 0.01 * index) < 0 ? 0 : (1.0 - 0.01 * index);
+                    return Stack(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: double.infinity,
+                          color: Colors.blue.withOpacity(opcaity),
+                          child: Text(
+                            controller.letters!.letter![index].text!,
+                            style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+
+                      ]
                     );
+                    /*
+                    return new Card(
+                      child: new Text(controller.letters!.letter![index].text!,
+                        style: TextStyle(fontSize: 20),
+                        //style: TextStyle(fontSize: 20, backgroundColor: Colors.lightGreen),
+                      ),
+                    );
+                    */
                   },
                 );
               },
             ),
           ),
 
-        Text(
-            "아",
-          style: TextStyle(fontSize: 20, backgroundColor: Colors.lightGreen),
-        ),
           TextField(
             style: TextStyle(fontSize: 20, backgroundColor: Colors.lightBlue),
             controller: controller.content,
             decoration: InputDecoration(
+
                 isDense: true
+
             ),
           ),
         ]
@@ -51,7 +72,6 @@ class LetterTakeView extends GetView<LetterTakeController> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // 답장 추가하는 것을 추가해서 넘겨줘야 함
-          
         },
         backgroundColor: Colors.blueGrey,
         child: const Icon(Icons.create),
