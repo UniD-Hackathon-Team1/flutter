@@ -29,7 +29,18 @@ class BookShelfView extends GetView<BookShelfController> {
                   image: AssetImage("assets/images/book_shelf.jpg"),
                   fit: BoxFit.cover),
             ),
-
+          child: GetBuilder<BookShelfController>(
+            builder: (_) {
+              return new ListView.builder(
+                itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return new Card(
+                    child: new Text(controller.letters!.letter![index].text!),
+                  );
+                },
+              );
+            },
+          ),
           ),
         ]
       ),
