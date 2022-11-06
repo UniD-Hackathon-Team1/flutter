@@ -68,8 +68,8 @@ class LetterTakeView extends GetView<LetterTakeController> {
       ),
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          controller.content.clear();
+        onPressed: () async{
+          controller.send();
           // 답장 추가하는 것을 추가해서 넘겨줘야 함
         },
         backgroundColor: Colors.blueGrey,

@@ -10,4 +10,7 @@ class LetterTakeRepository {
   Future<Bottle?> getBottle(int id) async =>
       await bottleProvider.getBottle(id);
 
+  Future<String> addLetter(int id,String text) async =>
+      await bottleProvider.addLetter(text,id);
+
 }

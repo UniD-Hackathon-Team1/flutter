@@ -12,6 +12,7 @@ class LetterTakeController extends GetxController {
   void onInit() async{
     super.onInit();
     letters = await letterTakeRepository.getBottle(int.parse(Get.arguments));
+    print(letters!.letter!.length);
     update();
   }
 
@@ -23,5 +24,12 @@ class LetterTakeController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void send()async{
+
+    await letterTakeRepository.addLetter(int.parse(Get.arguments), content.value.text);
+    content.clear();
+    Get.back();
   }
 }

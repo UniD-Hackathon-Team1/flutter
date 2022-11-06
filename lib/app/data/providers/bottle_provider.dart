@@ -44,11 +44,34 @@ class BottleProvider extends GetConnect {
         'X-AUTH-TOKEN':userInfo.token!
       },);
     List j = jsonDecode(utf8.decode(response.bodyBytes));
-    var js = {"bottleId":-1,"letter":j};
+    List p = [];
+    for(int i = 0;i<j.length;i++){
+      p.add({"text":j[i]['text'],"timeDate":j[i]['time']});
+    }
+    var js = {"bottleId":-1,"letter":p};
     Bottle bottle = Bottle.fromJson(js);
     return bottle;
   }
 
+
+  Future<String> addLetter(String text,int bottleId) async {
+    String tex = 'write';
+    GetStorage box = GetStorage();
+    var userInfoJson = box.read(Constants.userBox);
+    UserInfo userInfo = UserInfo.fromJson(userInfoJson);
+    Uri uri =
+    Uri.https(Constants.serverApi, tex);
+    var response = await http.post(uri,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          'Accept': '*/*',
+          'X-AUTH-TOKEN':userInfo.token!
+        },body: jsonEncode({
+          "text" : text,"bottleId":bottleId
+        }));
+    return response!.body;
+  }
 
 
   Future<String> postBottle(String text) async {

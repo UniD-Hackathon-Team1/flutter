@@ -39,15 +39,18 @@ class BookShelfView extends GetView<BookShelfController> {
                   return MaterialButton(
                     onPressed: () { controller.changeExpanded(index); },
                     child: Card(
-                      child: (index==controller.expande)?Container(
-                        height: 100,
-                        color: Colors.greenAccent.withOpacity(0.1),
-                        width: double.infinity,
-                        child: Container(
-                            child: Text(controller.letters!.letter![index].text!)),
-                      ):Text('2022' + "년" +
-                          "11월" +
-                          (index+2).toString() + "일"),
+                      child: Column(
+                        children: [
+                          Text(_.letters!.letter![index].timeDate!.year.toString()+'.'+_.letters!.letter![index].timeDate!.month.toString()+'.'+_.letters!.letter![index].timeDate!.day.toString()),
+                          Container(
+                            height: 100,
+                            color: Colors.greenAccent.withOpacity(0.1),
+                            width: double.infinity,
+                            child: Container(
+                                child: Text(controller.letters!.letter![index].text!)),
+                          ),
+                        ],
+                      )
                     ),
                   );
                 },
