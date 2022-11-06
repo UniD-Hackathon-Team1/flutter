@@ -29,6 +29,8 @@ class LetterWriteController extends GetxController {
   void increment() => count.value++;
 
   Future<void> write() async {
-    await letterWriteRepository.sendBottle(content.value.text);
-    content.clear();}
+    String buf = content.value.text;
+    content.clear();
+    await letterWriteRepository.sendBottle(buf);
+  }
 }

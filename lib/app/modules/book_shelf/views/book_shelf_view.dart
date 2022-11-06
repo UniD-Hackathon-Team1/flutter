@@ -24,7 +24,7 @@ class BookShelfView extends GetView<BookShelfController> {
       body: Column(
           children:<Widget>[
           Container(
-            height: 640,
+            height: 620,
             decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage("assets/images/book_shelf.jpg"),
@@ -32,24 +32,23 @@ class BookShelfView extends GetView<BookShelfController> {
             ),
           child: GetBuilder<BookShelfController>(
             builder: (_) {
-              return new ListView.builder(
+              return ListView.builder(
                 itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                 itemBuilder: (BuildContext context, int index) {
                   // return new Card(
-                  return Column(
-                    children: [
-                      MaterialButton(
-                        onPressed: () { Get.toNamed(Routes.VIEWLETTER); },
+                  return MaterialButton(
+                    onPressed: () { controller.changeExpanded(index); },
+                    child: Card(
+                      child: (index==controller.expande)?Container(
+                        height: 100,
+                        color: Colors.greenAccent.withOpacity(0.1),
+                        width: double.infinity,
                         child: Container(
-                          child: new Card(
-                            // child: new Text(controller.letters!.letter![index].text!),
-                            child: new Text(controller.letters!.letter![index].timeDate!.year.toString() + "년" +
-                                controller.letters!.letter![index].timeDate!.month.toString() + "월" +
-                                controller.letters!.letter![index].timeDate!.day.toString() + "일"),
-                          ),
-                        ),
-                      ),
-                    ],
+                            child: Text(controller.letters!.letter![index].text!)),
+                      ):Text('2022' + "년" +
+                          "11월" +
+                          (index+2).toString() + "일"),
+                    ),
                   );
                 },
               );

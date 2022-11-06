@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:unid2022/app/data/models/bottle_model.dart';
-import 'package:unid2022/app/data/providers/bottle_provider.dart';
 import 'package:unid2022/app/data/repositories/letter_take_repository.dart';
 
 class LetterTakeController extends GetxController {
-  final count = 0.obs;
   final LetterTakeRepository letterTakeRepository;
   final content = TextEditingController();
   Bottle? letters;
@@ -13,9 +11,7 @@ class LetterTakeController extends GetxController {
   @override
   void onInit() async{
     super.onInit();
-    letters = await letterTakeRepository.getBottle(1);
-    print(letters!.bottleId);
-    print(letters!.letter![0].text );
+    letters = await letterTakeRepository.getBottle(int.parse(Get.arguments));
     update();
   }
 
@@ -28,6 +24,4 @@ class LetterTakeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

@@ -37,16 +37,19 @@ class LetterView extends GetView<LetterController> {
           children: [
             FloatingActionButton(
               onPressed: () {Get.toNamed(Routes.OCEAN);},
+              heroTag: Text("btn1"),
               backgroundColor: Colors.lightBlueAccent,
               child: Icon(Icons.sailing),
             ),
             SizedBox(height: 8,),
             FloatingActionButton(
+              heroTag: Text("btn2"),
               onPressed: () {Get.toNamed(Routes.BOOK_SHELF);},
               child: Icon(Icons.menu_book_outlined),
             ),
             SizedBox(height: 8,),
             FloatingActionButton(
+              heroTag: Text("btn3"),
               onPressed: () {Get.toNamed(Routes.LETTER_WRITE);},
               backgroundColor: Colors.blueAccent,
               child: Icon(Icons.create),

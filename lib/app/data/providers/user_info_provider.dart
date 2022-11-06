@@ -11,7 +11,6 @@ import '../models/user_info_model.dart';
 
 class UserInfoProvider extends GetConnect {
   GetStorage box = GetStorage();
-  final connect = GetConnect();
 
   @override
   void onInit() {
@@ -31,12 +30,13 @@ class UserInfoProvider extends GetConnect {
 
   Future<UserInfo?> login(User user) async {
     Uri uri =
-        Uri.https('late-terms-scream-123-212-9-154.loca.lt', 'user/login');
+        Uri.http(Constants.serverApi, 'user/login');
+    print(uri.path);
     var response = await http.post(uri,
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
-          'Accept': '*/*'
+          'Accept': '*/*',
         },
         body: jsonEncode({"userId": "jjjj", "password": "passw1234!"}));
     print(response.body);

@@ -1,12 +1,18 @@
 import 'package:get/get.dart';
+import 'package:unid2022/app/data/models/bottle_model.dart';
+import 'package:unid2022/app/data/repositories/viewreviewletter_repotitory.dart';
 
 class ViewreviewletterController extends GetxController {
   //TODO: Implement ViewreviewletterController
+  final ViewreviewletterRepository repository;
+  Bottle? bottle;
 
-  final count = 0.obs;
+  ViewreviewletterController({required this.repository});
   @override
-  void onInit() {
+  void onInit() async{
     super.onInit();
+    bottle = await repository.getMyBottle(int.parse(Get.arguments));
+    update();
   }
 
   @override
@@ -18,6 +24,4 @@ class ViewreviewletterController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

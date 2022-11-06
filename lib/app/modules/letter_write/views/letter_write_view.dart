@@ -35,7 +35,6 @@ class LetterWriteView extends GetView<LetterWriteController> {
                 TextField(
                   controller: controller.content,
                   decoration: InputDecoration(
-
                       labelText: "이야기 입력",
                       hintText: '생각나는 이야기를 적어주세요',
                       border: OutlineInputBorder(), //외곽선

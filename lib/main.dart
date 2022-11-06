@@ -9,6 +9,7 @@ void main() async{
   await GetStorage.init();
   runApp(
     GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "아아아앙아",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,

@@ -22,14 +22,34 @@ class ViewreviewletterView extends GetView<ViewreviewletterController> {
           ),
         ],
       ),
-      body: Container(
+      body: GetBuilder<ViewreviewletterController>(
+        builder: (_) {
+          return Container(
+            height: 600,
+            child: ListView.builder(
+              itemCount: controller.bottle  == null ? 0 : controller.bottle!.letter!.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Column(
+                  children: [
+                    Container(
+                      child: MaterialButton(
+                        onPressed: () { Get.toNamed(Routes.VIEWRANDOMLETTER); },
+                        child: Card(
+                          color: Colors.indigo[index * 100],
+                          child: Text(controller.bottle!.letter![index].text!,
+                            style: TextStyle(fontSize: 20),
+                            //style: TextStyle(fontSize: 20, backgroundColor: Colors.lightGreen),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                );
 
-        constraints: BoxConstraints.expand(),
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/letter.jpg"),
-              fit: BoxFit.cover),
-        ),
+              },
+            ),
+          );
+        },
       ),
     );
   }

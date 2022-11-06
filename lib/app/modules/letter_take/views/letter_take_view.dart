@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:unid2022/app/modules/letter_write/views/letter_write_view.dart';
 
 import '../../../routes/app_pages.dart';
 import '../controllers/letter_take_controller.dart';
@@ -26,15 +25,12 @@ class LetterTakeView extends GetView<LetterTakeController> {
       body: Column(
         children:<Widget>[
           Container(
-            height: 400,
+            height: 450,
             child: GetBuilder<LetterTakeController>(
               builder: (_) {
-                print(controller.letters  == null);
                 return new ListView.builder(
                   itemCount: controller.letters  == null ? 0 : controller.letters!.letter!.length,
                   itemBuilder: (BuildContext context, int index) {
-
-
                     return Column(
                       children: [
                         MaterialButton(
@@ -73,6 +69,7 @@ class LetterTakeView extends GetView<LetterTakeController> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          controller.content.clear();
           // 답장 추가하는 것을 추가해서 넘겨줘야 함
         },
         backgroundColor: Colors.blueGrey,

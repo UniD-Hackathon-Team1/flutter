@@ -7,17 +7,15 @@ import '../../../data/repositories/book_shelf_repository.dart';
 class BookShelfController extends GetxController {
   //TODO: Implement BookShelfController
 
-  final count = 0.obs;
   final BookShelfRepository bookShelfRepository;
   Bottle? letters;
-  RxBool isCardExpanded = false.obs;
+  int expande = -1;
 
   BookShelfController({required this.bookShelfRepository});
   @override
   Future<void> onInit() async {
     super.onInit();
     letters = await bookShelfRepository.getMyBottle();
-    print(letters!.letter![0].timeDate );
     update();
   }
 
@@ -31,10 +29,13 @@ class BookShelfController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
-
-  void changeExpanded() {
-    isCardExpanded.value = !isCardExpanded.value;
+  void changeExpanded(number) {
+    if(number == expande){
+      expande = -1;
+    }
+    else{
+      expande = number;
+    }
     update();
   }
 }

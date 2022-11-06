@@ -17,7 +17,7 @@ class LoginController extends GetxController {
   void onInit() async {
     super.onInit();
     UserInfo? userInfo = await repository.checkTokenExist();
-    if (userInfo != null) Get.toNamed(Routes.OCEAN);
+    if (userInfo != null) Get.toNamed(Routes.LETTER);
   }
 
   @override
@@ -36,7 +36,7 @@ class LoginController extends GetxController {
     idController.clear();
     passwordController.clear();
     if (userInfo != null) {
-      Get.toNamed(Routes.OCEAN);
+      Get.toNamed(Routes.LETTER);
     }
   }
 }
